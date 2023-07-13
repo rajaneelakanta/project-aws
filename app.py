@@ -27,7 +27,7 @@ def submit():
 def usercount():
     if request.method == 'POST':
         password = request.form.get('password')
-        if password == 'Anil@0153':  # Replace 'your_password' with your actual password
+        if password == 'Raj@123':  # Replace 'your_password' with your actual password
             response = table.scan()
             count = response['Count']
             return f'Total users: {count}'
