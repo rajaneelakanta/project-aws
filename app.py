@@ -2,9 +2,9 @@ from flask import Flask, render_template, request
 import boto3 
 
 app = Flask(__name__)
-dynamodb = boto3.resource('dynamodb')  # Replace with your desired region
-table_name = 'raj-table'  # Replace with your DynamoDB table name
-table = dynamodb.Table(table_name)
+dynamodb = boto3.resource('mysql')  # Replace with your desired region
+table_name = 'project-raj-mysql'  # Replace with your DynamoDB table name
+table = mysql.Table(table_name)
 
 @app.route('/')
 def index():
@@ -21,7 +21,7 @@ def submit():
     table.put_item(Item={'name': name, 'age': age})
     
 
-    return 'Data stored successfully in DynamoDB'
+    return 'Data stored successfully in mysql'
 
 @app.route('/usercount', methods=['GET', 'POST'])
 def usercount():
@@ -39,7 +39,7 @@ if __name__ == '__main__':
  
     # run() method of Flask class runs the application
     # on the local development server.
-    app.run(host="0.0.0.0",port=8080,debug=False)
+    app.run(host="0.0.0.0",port=3306,debug=False)
     print(table_name)
 
 
