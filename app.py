@@ -3,7 +3,7 @@ import boto3
 
 app = Flask(__name__)
 dynamodb = boto3.resource('mysql')  # Replace with your desired region
-table_name = 'project-raj-mysql'  # Replace with your DynamoDB table name
+table_name = 'projectrajmysql'  # Replace with your DynamoDB table name
 table = mysql.Table(table_name)
 
 @app.route('/')
