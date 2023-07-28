@@ -32,7 +32,7 @@ def usercount():
             count = response['Count']
             return f'Total users: {count}'
         else:
-            return 'Invalid password'
+            return 'Invalid Password'
     return render_template('usercount.html')
 # main driver function
 if __name__ == '__main__':
